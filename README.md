@@ -1,10 +1,14 @@
-# Run Avatarify on NVIDIA Jetson
+# Run Avatarify in Docker Container on NVIDIA Jetson
 
 Motivated by [alievk/avatarify](https://github.com/alievk/avatarify).
 
 The objetive of this project is to build a Docker image, enables Avatarify to be run in a container using the NVIDIA Container Runtime on Jetson.
 
-The image would built on **nvcr.io/nvidia/l4t-ml**. It contains lots of pre-built Python packages. That will save compilation time.
+The image would built on **nvcr.io/nvidia/l4t-ml:r32.5.0-py3**. It contains lots of pre-built Python packages. That will save compilation time.
+
+## Tested Hardwares
+
+- [x] NVIDIA Jetson Nano 4GB Developer Kit with JetPack 4.5.1
 
 ## Prepare Repo on Host
 
@@ -64,8 +68,6 @@ cd ..
 ```
 
 ## Build Docker Image
-
-We will use **nvcr.io/nvidia/l4t-ml** whihc contains lots of pre-built Python packages.
 
 ### Start the Docker container
 
