@@ -6,7 +6,6 @@ DISPLAY=":0"
 
 xhost +
 
-source scripts/settings.sh
 bash scripts/create_virtual_camera.sh
 
 docker run --name avatarify -it --rm \
