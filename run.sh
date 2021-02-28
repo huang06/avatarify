@@ -76,9 +76,9 @@ if [[ $USE_DOCKER == 0 ]]; then
     
     source scripts/settings.sh
     
-    if [[ $ENABLE_VCAM == 1 ]]; then
-        bash scripts/create_virtual_camera.sh
-    fi
+    # if [[ $ENABLE_VCAM == 1 ]]; then
+    #     bash scripts/create_virtual_camera.sh
+    # fi
     
     if [[ $ENABLE_CONDA == 1 ]]; then
         source $(conda info --base)/etc/profile.d/conda.sh
@@ -87,7 +87,7 @@ if [[ $USE_DOCKER == 0 ]]; then
     
     export PYTHONPATH=$PYTHONPATH:$(pwd):$(pwd)/fomm
     
-    python afy/cam_fomm.py \
+    python3 afy/cam_fomm.py \
         --config $FOMM_CONFIG \
         --checkpoint $FOMM_CKPT \
         --virt-cam $CAMID_VIRT \
