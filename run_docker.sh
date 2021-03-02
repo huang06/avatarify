@@ -3,7 +3,7 @@
 # IMAGE="nvcr.io/nvidia/l4t-ml:r32.5.0-py3"
 IMAGE="avatarify:dev"
 
-xhost +
+export DISPLAY=":1"  # modify display index to meet your need
 
 bash scripts/create_virtual_camera.sh
 
@@ -11,7 +11,7 @@ docker run --name avatarify -it --rm \
 --runtime nvidia --network host \
 --privileged \
 --cap-add=ALL \
--e DISPLAY=":0" \
+-e DISPLAY=${DISPLAY} \
 -v /tmp/.X11-unix/:/tmp/.X11-unix \
 -v ${HOME}/.Xauthority:/root/.Xauthority \
 -v /lib/modules:/lib/modules \
